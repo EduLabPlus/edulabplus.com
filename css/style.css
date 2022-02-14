@@ -595,14 +595,14 @@ a:focus {
       -ms-flex-align: center;
           align-items: center;
   margin-top: 15px;
-  color: #64a70b;
+  color: #f1f1f1;
 }
 
 .about_section .box .detail-box a hr {
   border: none;
   width: 90px;
   height: 1px;
-  background-color: #64a70b;
+  background-color: #f1f1f1;
   margin: 0;
   margin-left: 5px;
 }
