@@ -34,6 +34,7 @@
   <div class="hero_area">
     <!-- header section strats -->
     <header class="header_section">
+      <form action="#" method="post">
       <div class="contact_nav_container">
         <div class="container">
           <div class="contact_nav">
@@ -75,6 +76,7 @@
                 <span class="s-3"> </span>
               </button>
             </div>
+          </form>
             <div class="overlay-content">
               <a class="" href="index.html"> Home <span class="sr-only">(current)</span></a>
               <a class="" href="about.html"> About</a>
@@ -122,13 +124,30 @@
                 Get In Touch
               </h2>
             </div>
-            <form action="">
-              <input type="text" placeholder="Full name " />
+            <div id="loading" class="text-info text-center hide"><i class="fa fa-circle-o-notch fa-spin fa-2x fa-fw"></i><br/></div>
+            <div id="sendmessage">Your message has been sent. Thank you!</div>
+            <div id="errormessage"></div>
+            <form action="#" method="post" role="form" class="contactForm">
+              <input type="hidden" name="subject" value="Contact Request Received" />
+              <input type="text" name="name" placeholder="Full name" />
               <div class="top_input">
-                <input type="email" placeholder="Email" />
-                <input type="text" placeholder="Phone Number" />
+                <input type="email" name="email" placeholder="Email" />
+                <input type="text" name="phone" required placeholder="Phone Number" />
               </div>
-              <input type="text" placeholder="Message" class="message_input" />
+              <input type="text" name="message" placeholder="Message" class="message_input" />
+              <input type="radio" name="role" required value="Teacher">
+              <label for="teacher">Teacher</label>
+              <input type="radio" name="role" value="Parent" class="parent">
+              <label for="student">Parent</label>
+              <input type="radio" name="role" value="Student" class="student">
+              <label for="student">Student</label>
+              <select name="enquiryType" required class="message_input">
+                <option value="">Type of enquiry</option>
+                <option value="G">General Enquiry</option>
+                <option value="E">Expo @ School</option>
+                <option value="C">Short Courses</option>
+                <option value="W">Workshops @ School</option>
+              </select>
               <div class="btn-box">
                 <button>
                   Send
@@ -245,7 +264,6 @@
   <script src="js/bootstrap.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
   <script src="js/custom.js"></script>
-
 </body>
 
 </html>
