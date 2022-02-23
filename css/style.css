@@ -913,7 +913,7 @@ a:focus {
   width: 48%;
 }
 
-.contact_section .contact-form input {
+.contact_section .contact-form input, .contact_section .contact-form select {
   width: 100%;
   margin: 10px 0;
   height: 45px;
@@ -924,8 +924,21 @@ a:focus {
           box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1);
 }
 
+.contact_section .contact-form .role_radio input {
+  width: 10%;
+}
+
+.contact_section .contact-form .role_radio label {
+  height: 45px;
+  vertical-align: middle;
+}
+
 .contact_section .contact-form input.message_input {
   height: 125px;
+}
+
+.contact_section .contact-form select.enquiry_type {
+  background-color: white;
 }
 
 .contact_section .contact-form input::-webkit-input-placeholder {

@@ -9,18 +9,18 @@ jQuery(document).ready(function($) {
 				url: 'https://htmlservice.herokuapp.com/api/edulabplus/contact',				
                 data: formData,	
                 beforeSend: function(){
-                    $('#loading').addClass("show").removeClass("hide");
+                    $('#loading').addClass("d-block").removeClass("d-none");
                  },		
 				success: function(data) {				                   
-                   $("#sendmessage").addClass("show");			
-                   $("#errormessage").removeClass("show");     
-				   $('#loading').removeClass("show").addClass("hide");
+                   $("#sendmessage").addClass("d-block");
+                   $("#errormessage").removeClass("d-block");
+				   $('#loading').removeClass("d-block").addClass("d-none");
                 },
 				error: function() {
-				   $("#sendmessage").removeClass("show");
-                   $("#errormessage").addClass("show");
-                   $('#errormessage').html("Error Occurred");
-				   $('#loading').removeClass("show").addClass("hide");
+				   $("#sendmessage").removeClass("d-block");
+                   $("#errormessage").addClass("d-block");
+                   $('#errormessage').html("Error occurred. Please try again");
+				   $('#loading').removeClass("d-block").addClass("d-none");
 				}
             });
         return false;

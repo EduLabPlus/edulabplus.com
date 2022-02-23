@@ -122,9 +122,9 @@
                 Get In Touch
               </h2>
             </div>
-            <div id="loading" class="text-info text-center hide"><i class="fa fa-circle-o-notch fa-spin fa-2x fa-fw"></i><br/></div>
-            <div id="sendmessage">Your message has been sent. Thank you!</div>
-            <div id="errormessage"></div>
+            <div id="loading" class="text-primary text-center d-none"><i class="fa fa-circle-o-notch fa-spin fa-2x fa-fw"></i><br/></div>
+            <div id="sendmessage" class="text-success text-center d-none">Your message has been sent. Thank you!</div>
+            <div id="errormessage" class="text-danger text-center"></div>
             <form action="#" method="post" role="form" class="contactForm">
               <input type="hidden" name="subject" value="Contact Request Received" />
               <input type="text" name="name" placeholder="Full name" />
@@ -133,13 +133,17 @@
                 <input type="text" name="phone" required placeholder="Phone Number" />
               </div>
               <input type="text" name="message" placeholder="Message" class="message_input" />
-              <input type="radio" name="role" required value="Teacher">
-              <label for="teacher">Teacher</label>
-              <input type="radio" name="role" value="Parent" class="parent">
-              <label for="student">Parent</label>
-              <input type="radio" name="role" value="Student" class="student">
-              <label for="student">Student</label>
-              <select name="enquiryType" required class="message_input">
+              <div class="role_radio">
+                <label for="parent">Parent</label>
+                <input type="radio" name="role" required value="Parent">
+                <label for="student">Student</label>
+                <input type="radio" name="role" required value="Student">
+                <label for="teacher">Teacher</label>
+                <input type="radio" name="role" required value="Teacher">
+                <label for="others">Others</label>
+                <input type="radio" name="role" required value="Others">
+              </div>
+              <select name="enquiryType" required class="enquiry_type">
                 <option value="">Type of enquiry</option>
                 <option value="G">General Enquiry</option>
                 <option value="E">Expo @ School</option>
@@ -262,6 +266,7 @@
   <script src="js/bootstrap.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
   <script src="js/custom.js"></script>
+  <script src="js/contactform.js"></script>
 </body>
 
 </html>
