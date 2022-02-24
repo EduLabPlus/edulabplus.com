@@ -696,13 +696,17 @@
                 Get In Touch
               </h2>
             </div>
-            <form action="">
-              <input type="text" placeholder="Full name " />
+            <div id="loading" class="text-primary text-center d-none"><i class="fa fa-circle-o-notch fa-spin fa-2x fa-fw"></i><br/></div>
+            <div id="sendmessage" class="text-success text-center d-none">Your message has been sent. Thank you!</div>
+            <div id="errormessage" class="text-danger text-center"></div>
+            <form action="#" method="post" role="form" class="contactForm">
+            <input type="hidden" name="subject" value="Contact Request Received" />
+              <input type="text" name="name" placeholder="Full name " />
               <div class="top_input">
-                <input type="email" placeholder="Email" />
-                <input type="text" required placeholder="Phone Number" />
+                <input type="email" name="email" placeholder="Email" />
+                <input type="text" name="phone" required placeholder="Phone Number" />
               </div>
-              <input type="text" placeholder="Message" class="message_input" />
+              <input type="text" placeholder="Message" name="message" class="message_input" />
               <div class="role_radio">
                 <label for="parent">Parent</label>
                 <input type="radio" name="role" required value="Parent">
@@ -721,7 +725,7 @@
                 <option value="W">Workshops @ School</option>
               </select>
               <div class="btn-box">
-                <button>
+                <button type="submit">
                   Send
                 </button>
               </div>
