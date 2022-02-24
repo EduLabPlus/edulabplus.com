@@ -704,13 +704,13 @@
             <div id="sendmessage" class="text-success text-center d-none">Your message has been sent. Thank you!</div>
             <div id="errormessage" class="text-danger text-center"></div>
             <form action="#" method="post" role="form" class="contactForm">
-            <input type="hidden" name="subject" value="Contact Request Received" />
-              <input type="text" name="name" placeholder="Full name " />
+              <input type="hidden" name="subject" value="Contact Request Received" />
+              <input type="text" name="name" placeholder="Full name" />
               <div class="top_input">
                 <input type="email" name="email" placeholder="Email" />
                 <input type="text" name="phone" required placeholder="Phone Number" />
               </div>
-              <input type="text" placeholder="Message" name="message" class="message_input" />
+              <input type="text" name="message" placeholder="Message" class="message_input" />
               <div class="role_radio">
                 <label for="parent">Parent</label>
                 <input type="radio" name="role" required value="Parent">
@@ -729,7 +729,7 @@
                 <option value="W">Workshops @ School</option>
               </select>
               <div class="btn-box">
-                <button type="submit">
+                <button>
                   Send
                 </button>
               </div>
@@ -937,7 +937,6 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
   <script src="js/custom.js"></script>
   <script src="js/contactform.js"></script>
-
 </body>
 
 </html>
