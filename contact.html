@@ -137,12 +137,6 @@
             <div id="errormessage" class="text-danger text-center"></div>
             <form action="#" method="post" role="form" class="contactForm">
               <input type="hidden" name="subject" value="Contact Request Received" />
-              <input type="text" name="name" placeholder="Full name" />
-              <div class="top_input">
-                <input type="email" name="email" placeholder="Email" />
-                <input type="text" name="phone" required placeholder="Phone Number" />
-              </div>
-              <input type="text" name="message" placeholder="Message" class="message_input" />
               <div class="role_radio">
                 <label for="parent">Parent</label>
                 <input type="radio" name="role" required value="Parent">
@@ -160,6 +154,12 @@
                 <option value="C">Short Courses</option>
                 <option value="W">Workshops @ School</option>
               </select>
+              <input type="text" name="name" required placeholder="Full name" />
+              <div class="top_input">
+                <input type="email" name="email" placeholder="Email" />
+                <input type="text" name="phone" required placeholder="Phone Number" />
+              </div>
+              <input type="text" name="message" placeholder="Message" class="message_input" />
               <div class="btn-box">
                 <button>
                   Send
