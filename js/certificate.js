@@ -15,14 +15,14 @@ jQuery(document).ready(function($) {
             },
             success: function(blob, status, xhr) {
                 // check for a filename
-                var filename = "";
+                var filename = $('form.certificateForm').find("select[name='studentName']").val();
                 var disposition = xhr.getResponseHeader('Content-Disposition');
                 if (disposition && disposition.indexOf('attachment') !== -1) {
                     var filenameRegex = /filename[^;=\n]*=((['"]).*?\2|[^;\n]*)/;
                     var matches = filenameRegex.exec(disposition);
                     if (matches != null && matches[1]) filename = matches[1].replace(/['"]/g, '');
                 }
-        
+
                 if (typeof window.navigator.msSaveBlob !== 'undefined') {
                     // IE workaround for "HTML7007: One or more blob URLs were revoked by closing the blob for which they were created. These URLs will no longer resolve as the data backing the URL has been freed."
                     window.navigator.msSaveBlob(blob, filename);
@@ -35,7 +35,8 @@ jQuery(document).ready(function($) {
                         var a = document.createElement("a");
                         // safari doesn't support this yet
                         if (typeof a.download === 'undefined') {
-                            window.location.href = downloadUrl;
+                         //   window.location.href = downloadUrl;
+                            window.open(downloadUrl,"_blank");
                         } else {
                             a.href = downloadUrl;
                             a.download = filename;
@@ -43,7 +44,8 @@ jQuery(document).ready(function($) {
                             a.click();
                         }
                     } else {
-                        window.location.href = downloadUrl;
+                        //window.location.href = downloadUrl;
+                        window.open(downloadUrl,"_blank");
                     }
         
                     setTimeout(function () { URL.revokeObjectURL(downloadUrl); }, 100); // cleanup
