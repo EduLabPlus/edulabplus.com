@@ -1,8 +1,8 @@
 jQuery(document).ready(function($) {
 "use strict";
 
-    function downloadExpoCertificate() {
-        var formData = $('form.certificateForm').serialize();
+    $('form.certificateForm').submit(function(){
+        var formData = $(this).serialize();
         $.ajax({
             type: "GET",                
             url: 'https://htmlservice.herokuapp.com/api/edulabplus/expo/certificate',				
@@ -21,7 +21,10 @@ jQuery(document).ready(function($) {
                $('#errormessage').html("Error occurred. Please try again");
                $('#loading').removeClass("d-block").addClass("d-none");
             }
+        }).always(function(){				
+            $('form.certificateForm').find("select[name='studentName']").val('');
         });
-    }
+        return false;
+    });
 
 });
