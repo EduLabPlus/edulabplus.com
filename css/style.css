@@ -939,9 +939,11 @@ a:focus {
 .contact_section .contact-form select.enquiry_type {
   background-color: white;
 }
+
 .contact_section .contact-form select.student_name {
   background-color: white;
 }
+
 .contact_section .contact-form input::-webkit-input-placeholder {
   color: #acabab;
 }
