@@ -7,6 +7,7 @@ jQuery(document).ready(function($) {
             type: "GET",                
             url: 'https://htmlservice.herokuapp.com/api/edulabplus/expo/certificate',				
             data: formData,
+            responseType: "blob",
             beforeSend: function(){
                 $('#loading').addClass("d-block").removeClass("d-none");
              },
@@ -24,7 +25,7 @@ jQuery(document).ready(function($) {
         }).always(function(){				
             $('form.certificateForm').find("select[name='studentName']").val('');
         });
-       // return false;
+       return false;
     });
 
 });
