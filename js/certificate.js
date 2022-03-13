@@ -1,6 +1,16 @@
 jQuery(document).ready(function($) {
 "use strict";
 
+    var options = $("select.student_name option");
+    options.detach().sort(function(a,b) {
+        var at = $(a).text();
+        var bt = $(b).text();
+        return (at > bt) ? 1: ((at < bt) ? -1 : 0);
+    });
+    options.appendTo("select.student_name");
+    $('select.student_name').prepend("<option value=''>Select Student</option>");
+    $('form.certificateForm').find("select[name='studentName']").val('');
+
     $('form.certificateForm').submit(function(){
         var formData = $(this).serialize();
         $.ajax({
@@ -8,7 +18,7 @@ jQuery(document).ready(function($) {
             url: 'https://htmlservice.herokuapp.com/api/edulabplus/expo/certificate',				
             data: formData,
             xhrFields: {
-                responseType: 'blob' // to avoid binary data being mangled on charset conversion
+                responseType: 'blob'
             },
             beforeSend: function(){
                 $('#loading').addClass("d-block").removeClass("d-none");
