@@ -24,7 +24,7 @@ jQuery(document).ready(function($) {
         }).always(function(){				
             $('form.certificateForm').find("select[name='studentName']").val('');
         });
-        return false;
+       // return false;
     });
 
 });
